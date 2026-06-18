@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>MotorCar | Профессиональный автосервис</title>
+    <!-- Подключаем шрифты и иконки -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Подключаем 2GIS API -->
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <!-- Подключаем внешние стили и скрипты -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Motor<span>Car</span></a>
+            <div class="mobile-menu" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Главная</a>
+                <a href="#services">Услуги</a>
+                <a href="#about">О нас</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#contact">Контакты</a>
+                <a href="tel:+79502907547" class="nav-phone"><i class="fas fa-phone-alt"></i> +7 950 290-75-47</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- МОДАЛКА КОНТАКТОВ -->
+    <div class="contact-modal" id="contactModal">
+        <div class="contact-modal-content">
+            <button class="contact-modal-close" id="closeContactModal">&times;</button>
+            <i class="fas fa-phone-circle" style="font-size:3.5rem;color:var(--primary-light);margin-bottom:12px;"></i>
+            <div class="phone-big">+7 950 290-75-47</div>
+            <div class="admin-name"><i class="fas fa-user-tie"></i> Администратор Владислав</div>
+            <a href="tel:+79502907547" class="btn-call"><i class="fas fa-phone-alt"></i> Позвонить</a>
+            <p style="margin-top:16px;font-size:.85rem;color:var(--text-soft);">Свяжитесь с нами по любым вопросам</p>
+        </div>
+    </div>
+
+    <!-- МОДАЛКА ДЕТАЛЕЙ УСЛУГИ -->
+    <div id="serviceDetailModal" class="service-modal">
+        <div class="service-modal-content">
+            <span class="service-modal-close" id="closeServiceModalBtn">&times;</span>
+            <h3 id="modalServiceTitle">Название услуги</h3>
+            <div id="modalServiceDescription" style="margin:16px 0;line-height:1.5"></div>
+            <div id="modalServicePrice" class="service-detail-price"></div>
+            <div id="modalServiceDetailsList" style="margin:12px 0 20px;padding-left:20px"></div>
+            <a href="#contact" class="btn btn-primary" id="modalOrderBtn">Записаться сейчас</a>
+        </div>
+    </div>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Ремонт авто, которому доверяют</h1>
+                <p>Диагностика, техобслуживание, кузовной ремонт и шиномонтаж. Официальная гарантия, современное оборудование и лучшие мастера.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Записаться онлайн</a>
+                    <a href="#services" class="btn btn-outline">Наши услуги</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item"><div class="stat-number">12+</div><div class="stat-label">лет опыта</div></div>
+                <div class="stat-item"><div class="stat-number">8 200+</div><div class="stat-label">довольных авто</div></div>
+                <div class="stat-item"><div class="stat-number">09:00-20:00</div><div class="stat-label">режим работы</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section id="services">
+        <div class="container">
+            <h2>Наши услуги</h2>
+            <div class="section-subhead">Нажмите на любую услугу или на цену, чтобы узнать подробности.</div>
+            <div class="services-grid" id="servicesGrid"></div>
+        </div>
+    </section>
+
+    <!-- О НАС -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Почему выбирают MotorCar?</h2>
+                    <p>Мы создали автосервис, в котором совместили профессионализм, комфорт и честные цены.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Гарантия на все виды работ до 12 месяцев</li>
+                        <li><i class="fas fa-clock"></i> Соблюдаем сроки — 95% ремонтов вовремя</li>
+                        <li><i class="fas fa-tools"></i> Оборудование Bosch, Hunter, Texa</li>
+                        <li><i class="fas fa-calendar-alt"></i> График работы 2/2</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="margin-top:28px">Записаться сейчас</a>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-wrench"></i>
+                    <i class="fas fa-car" style="font-size:3rem;display:block;margin-top:20px"></i>
+                    <p style="margin-top:20px;font-weight:500">Более 1000 клиентов в месяц доверяют нам свой автомобиль</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2>Что говорят клиенты</h2>
+            <div class="reviews-slider" id="reviewsSlider"></div>
+
+            <div class="review-form-box">
+                <div class="form-header">
+                    <i class="fas fa-pen-fancy"></i>
+                    <div>
+                        <h3>Оставить отзыв</h3>
+                        <p>Поделитесь своим опытом — это поможет другим водителям</p>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="reviewName" placeholder="Ваше имя" />
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-car"></i>
+                        <input type="text" id="reviewCar" placeholder="Модель авто" />
+                    </div>
+                </div>
+
+                <div class="rating-label">Ваша оценка</div>
+                <div class="star-rating" id="starRating">
+                    <i class="fas fa-star" data-star="1"></i>
+                    <i class="fas fa-star" data-star="2"></i>
+                    <i class="fas fa-star" data-star="3"></i>
+                    <i class="fas fa-star" data-star="4"></i>
+                    <i class="fas fa-star" data-star="5"></i>
+                </div>
+
+                <div class="textarea-group">
+                    <div class="textarea-label">
+                        <i class="fas fa-comment-dots"></i> Ваш отзыв
+                    </div>
+                    <textarea id="reviewText" rows="4" placeholder="Поделитесь впечатлениями о нашем сервисе..."></textarea>
+                    <div class="placeholder-text">
+                        <i class="fas fa-quote-left"></i> Поделитесь впечатлениями о нашем сервисе...
+                    </div>
+                    <div class="char-count">0 символов</div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-secondary" id="submitReviewBtn">
+                        <i class="fas fa-paper-plane"></i> Добавить отзыв
+                    </button>
+                    <button class="btn btn-outline-secondary" id="clearReviewBtn">
+                        <i class="fas fa-undo"></i> Очистить
+                    </button>
+                </div>
+                <div id="reviewMessage"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contact">
+        <div class="container">
+            <h2>Свяжитесь с нами</h2>
+            <div class="section-subhead">Мы всегда готовы помочь вам с ремонтом автомобиля</div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Контактная информация</h3>
+                    <div class="contact-detail"><i class="fas fa-map-marker-alt"></i><div>г. Владивосток, ул. Карбышева, 9а</div></div>
+                    <div class="contact-detail"><i class="fas fa-phone-alt"></i><div>+7 950 290-75-47</div></div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i><div>motor.car@internet.ru</div></div>
+                    <div class="contact-detail"><i class="fas fa-clock"></i><div>График работы: 2/2 (с 09:00 до 20:00)</div></div>
+                    <div class="contact-detail"><i class="fas fa-user-tie"></i><div>Владислав, администратор</div></div>
+                </div>
+                <div class="contact-form">
+                    <i class="fas fa-phone-alt" style="font-size:3rem;color:var(--primary-light);margin-bottom:16px;"></i>
+                    <h3 style="color:var(--primary-dark);margin-bottom:8px;">Нужна консультация?</h3>
+                    <p style="color:var(--text-soft);margin-bottom:24px;">Свяжитесь с нашим администратором</p>
+                    <button class="btn btn-gold" id="openContactBtn" style="font-size:1.2rem;padding:16px 40px;">
+                        <i class="fas fa-phone-alt"></i> Связаться с нами
+                    </button>
+                    <p style="margin-top:16px;font-size:.85rem;color:var(--text-soft);">Администратор Владислав ответит на все вопросы</p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="dgisMap"></div>
+            </div>
+            <div class="map-caption">
+                <i class="fas fa-location-dot"></i> Владивосток, ул. Карбышева, 9а — наш автосервис на карте 2ГИС
+            </div>
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>MotorCar</h4><p>Надёжный автосервис с душой. Заботимся о вашем автомобиле с 2012 года.</p></div>
+                <div class="footer-col"><h4>Услуги</h4><a href="#services">Диагностика</a><a href="#services">Техобслуживание</a><a href="#services">Шиномонтаж</a><a href="#services">Кузовной ремонт</a></div>
+                <div class="footer-col"><h4>Контакты</h4><a href="tel:+79502907547">+7 950 290-75-47</a><a href="mailto:motor.car@internet.ru">motor.car@internet.ru</a><span>Владивосток, Карбышева 9а</span></div>
+            </div>
+            <div class="copyright">© 2025 MotorCar — автосервис во Владивостоке. Все права защищены.</div>
+        </div>
+    </footer>
+
+    <!-- Подключаем внешний скрипт -->
+    <script src="main.js"></script>
+</body>
+</html>
